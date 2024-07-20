@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
-import DescriptionComponent from "./Components/Description/Description.jsx";
-import Options from "./Components/Options/Options.jsx";
-import Feedback from "./Components/Feedback/Feedback.jsx";
+import DescriptionComponent from "./components/Description/Description.jsx";
+import Options from "./components/Options/Options.jsx";
+import Feedback from "./components/Feedback/Feedback.jsx";
 import css from './styles.module.css'
 
 
