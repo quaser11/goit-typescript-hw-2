@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
-import DescriptionComponent from "./components/Description/Description.jsx";
-import Options from "./components/Options/Options.jsx";
-import Feedback from "./components/Feedback/Feedback.jsx";
-import css from './styles.module.css'
+import DescriptionComponent from "./Description/Description.jsx";
+import Options from "./Options/Options.jsx";
+import Feedback from "./Feedback/Feedback.jsx";
+import css from '../styles.module.css'
 
 
 const title = 'Sip Happens Café'
