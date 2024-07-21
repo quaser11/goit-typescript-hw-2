@@ -9,7 +9,7 @@ const Feedback = (props) => {
             <FeedbackType key={index}>{feedback}:{props.feedback[feedback]}</FeedbackType>
         ))}
         <FeedbackType>total:{props.totalFeedback}</FeedbackType>
-        <FeedbackType>Positive:{Math.round((props.feedback.good / props.totalFeedback) * 100)}%</FeedbackType>
+        <FeedbackType>Positive:{props.positiveFeedback}%</FeedbackType>
     </FeedbackContainer>;
 }
 

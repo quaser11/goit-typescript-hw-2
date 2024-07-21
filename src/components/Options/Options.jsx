@@ -12,15 +12,9 @@ const Options = (props) => {
                     <Button type='button' key={index} onClick={() => props.UpdateFeedback(option)}>{option}</Button>
                 ))
             }
-            <Button type='button' onClick={props.reset}>reset</Button>
+            {props.totalFeedback > 0&& <Button type='button' onClick={props.reset}>reset</Button>}
         </OptionsContainer>
     )
 }
-
-Options.propTypes = PropTypes.shape({
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-})
 
 export default Options
