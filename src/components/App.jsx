@@ -24,18 +24,12 @@ const App = () => {
         }
     })
 
-    const [totalFeedback, setTotalFeedback] = useState(0)
-    const [positiveFeedback, setPositiveFeedback] = useState(0)
+    const totalFeedback = feedback.good + feedback.bad + feedback.neutral
+    const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100)
 
     useEffect(() => {
-        setTotalFeedback(feedback.good + feedback.bad + feedback.neutral)
-
         localStorage.setItem('feedback', JSON.stringify(feedback))
-    }, [feedback.good, feedback.bad, feedback.neutral])
-
-    useEffect(() => {
-        setPositiveFeedback(Math.round((feedback.good / totalFeedback) * 100))
-    }, [totalFeedback])
+    }, [feedback])
 
     const UpdateFeedback = (feedbackType) => {
         setFeedback({...feedback, [feedbackType]: feedback[feedbackType] + 1})

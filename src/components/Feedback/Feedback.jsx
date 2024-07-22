@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 import {FeedbackContainer, FeedbackType} from "./Feedback.styled.js";
 
-const Feedback = (props) => {
+const Feedback = ({feedback, totalFeedback, positiveFeedback}) => {
 
-    const feedback = Object.keys(props.feedback);
+    const data = Object.keys(feedback);
     return <FeedbackContainer>
-        {feedback.map((feedback, index) =>(
-            <FeedbackType key={index}>{feedback}:{props.feedback[feedback]}</FeedbackType>
+        {data.map((item, index) =>(
+            <FeedbackType key={index}>{item}:{feedback[item]}</FeedbackType>
         ))}
-        <FeedbackType>total:{props.totalFeedback}</FeedbackType>
-        <FeedbackType>Positive:{props.positiveFeedback}%</FeedbackType>
+        <FeedbackType>total:{totalFeedback}</FeedbackType>
+        <FeedbackType>Positive:{positiveFeedback}%</FeedbackType>
     </FeedbackContainer>;
 }
 

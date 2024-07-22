@@ -1,18 +1,17 @@
-import PropTypes from "prop-types";
 import {OptionsContainer, Button} from "./Options.styled.js";
 
-const Options = (props) => {
+const Options = ({options, UpdateFeedback, reset, totalFeedback}) => {
 
-    const options = Object.keys(props.options);
+    const data = Object.keys(options);
 
     return (
         <OptionsContainer>
             {
-                options.map((option, index) => (
-                    <Button type='button' key={index} onClick={() => props.UpdateFeedback(option)}>{option}</Button>
+                data.map((option, index) => (
+                    <Button type='button' key={index} onClick={() => UpdateFeedback(option)}>{option}</Button>
                 ))
             }
-            {props.totalFeedback > 0&& <Button type='button' onClick={props.reset}>reset</Button>}
+            {totalFeedback > 0 && <Button type='button' onClick={reset}>reset</Button>}
         </OptionsContainer>
     )
 }
